@@ -1,0 +1,23 @@
+mat-sidenav {
+    background-color: rgba(67,66,93,1);
+}
+
+mat-sidenav-container {
+    height: 100vh;
+    width: 100%;
+}
+
+mat-nav-list a {
+    width: 300px;
+}
+
+.matlist-icon {
+    float: left;
+    width: 20px;
+}
+
+.matlist-text {
+    float: left;
+    width: 150px;
+    padding-left: 20px;
+}

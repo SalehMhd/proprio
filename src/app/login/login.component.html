@@ -1,0 +1,14 @@
+<form class="login-form">
+  <img srcset="assets/images/unknownuser.png 245w, assets/images/unknownuser@2x.png 490w"
+       sizes="(max-width: 245px) 228px, (max-width: 490px) 456px"
+       src="assets/images/unknownuser.png" />
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Username" [(ngModel)]="username" name="username">
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password">
+    </mat-form-field>
+
+    <button mat-flat-button (click)="onLoginBtnClicked()">Connection</button>
+</form>
