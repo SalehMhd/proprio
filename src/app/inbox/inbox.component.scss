@@ -1,14 +1,30 @@
+.header {
+    width: 100%;
+}
+
+.header img {
+    width: 100%;
+}
+
 table {
-    width: 75%;
+    width: 100%;
     padding: 10px 5px 0px 30px;
 }
 
-.header {
-    width: 75%;
-    display: inline-block;  
+table img {
+    width: 100%;
 }
 
-// .header img {
-//     height: auto;
-//     width: 70%;
-// }
+.tdclass {
+    position: relative;
+}
+
+.tdbackground {
+    position: absolute;
+    top: 5px;
+}
+
+.tdtext {
+    position: relative;
+    padding: 5px;
+}
