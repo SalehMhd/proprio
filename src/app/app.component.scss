@@ -21,3 +21,15 @@ mat-sidenav {
     width: 90%;
     padding-left: 20px;
 }
+
+.active-list-item {
+    background-color: rgb(71, 93, 66) !important;
+}
+
+.active-list-item path {
+    fill: rgba(163,160,251,1) !important;
+}
+
+.active-list-item span {
+    color: white;
+}
