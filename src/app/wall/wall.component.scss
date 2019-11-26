@@ -1,0 +1,60 @@
+.header {
+    width: 100%;
+}
+
+.header img {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    padding: 10px 5px 0px 30px;
+}
+
+table img {
+    width: 100%;
+}
+
+.tdimage {
+    width: 20%;
+}
+
+.tdcontent {
+    position: relative;
+    width: 80%;
+}
+
+.tdcontent span {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    text-align: left;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(112,112,112,1);
+}
+
+.tdbackground {
+    position: absolute;
+    top: 5px;
+}
+
+.tdtext {
+    position: relative;
+    padding: 5px;
+}
+
+.footer {
+    float: right;
+    margin-right: 100px;
+    text-align: left;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(255,255,255,1);
+    background-color: rgba(67,66,93,1);
+}
