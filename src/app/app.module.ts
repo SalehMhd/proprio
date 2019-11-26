@@ -17,6 +17,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { WallComponent } from './wall/wall.component';
+import { DropZoneDirective } from './drop-zone.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { WallComponent } from './wall/wall.component';
     InboxComponent,
     DashboardComponent,
     WallComponent
+    DropZoneDirective
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
