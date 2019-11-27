@@ -12,4 +12,7 @@ export class WallComponent implements OnInit {
   ngOnInit() {
   }
 
+  addPublicationBtnClicked() {
+    
+  }
 }
