@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { MatSidenavModule, MatListModule } from '@angular/material';
@@ -22,6 +23,7 @@ import { WallComponent } from './wall/wall.component';
 import { DropZoneDirective } from './drop-zone.directive';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileSizePipe } from './file-size.pipe';
+import { AddPublicationDialogComponent } from './add-publication-dialog/add-publication-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { FileSizePipe } from './file-size.pipe';
     WallComponent,
     DropZoneDirective,
     FileUploadComponent,
-    FileSizePipe
+    FileSizePipe,
+    AddPublicationDialogComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -45,11 +48,13 @@ import { FileSizePipe } from './file-size.pipe';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
+    MatDialogModule,
     FormsModule,
     MatSidenavModule,
     MatListModule
   ],
   providers: [CookieService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddPublicationDialogComponent]
 })
 export class AppModule { }

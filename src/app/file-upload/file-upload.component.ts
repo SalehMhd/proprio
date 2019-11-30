@@ -1,6 +1,6 @@
 //Source: https://angularfirebase.com/lessons/firebase-storage-with-angularfire-dropzone-file-uploader/
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireUploadTask, AngularFireStorage } from '@angular/fire/storage';
@@ -26,6 +26,9 @@ export class FileUploadComponent implements OnInit {
 
   // State for dropzone CSS toggling
   isHovering: boolean;
+
+  //on upload complete
+  @Output() uploadCompleted = new EventEmitter<string>();
 
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
 
@@ -56,6 +59,7 @@ export class FileUploadComponent implements OnInit {
     this.task = this.storage.upload(path, file, { customMetadata });
     const ref = this.storage.ref(path);
 
+
     // Progress monitoring
     this.percentage = this.task.percentageChanges();
     
@@ -64,7 +68,10 @@ export class FileUploadComponent implements OnInit {
       tap(snap => {
         if(snap.bytesTransferred === snap.totalBytes) {
           // Update firestore on completion
-          this.db.collection('photos').add( { path, size: snap.totalBytes })
+          this.downloadURL = ref.getDownloadURL();
+          this.downloadURL.subscribe(url => {
+            this.uploadCompleted.emit(url);      
+          })
         }
       })
     );
@@ -72,5 +79,9 @@ export class FileUploadComponent implements OnInit {
 
   isActive(snapshot) {
     return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes
+  }
+
+  ResetDownloadURL() {
+    this.downloadURL = null;
   }
 }

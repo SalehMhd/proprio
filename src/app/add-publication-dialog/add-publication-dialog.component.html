@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Ajoute une publication</h2>
+
+<mat-dialog-content>
+
+    <file-upload (uploadCompleted)="onUploadCompleted($event)"></file-upload>
+
+    <mat-form-field>
+        <textarea matInput cdkTextareaAutosize type="text" placeholder="Write some description" [(ngModel)]="publicationTextContent" name="publicationTextContent"></textarea>
+    </mat-form-field>      
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="cancel()">Annule</button>
+    <button class="mat-raised-button mat-primary"(click)="addPublicationBtnClicked()">Ajoute</button>
+</mat-dialog-actions>
