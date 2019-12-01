@@ -41,6 +41,20 @@
             </div>
         </td>
     </tr>
+    
+    <tr *ngFor="let pub of this.publications">
+        <td class="tdimage">
+            <img [src]="pub.PhotoUrl" />        
+        </td>
+        <td class="tdcontent">
+            <img src="assets/images/inbox/pub2content.png" class="tdbackground"/>
+            <div class="tdtext">
+                <span>
+                    {{pub.TextContent}}
+                </span>
+            </div>
+        </td>        
+    </tr>
 </table>
 <div class="footer">
     <button mat-flat-button (click)="addPublicationBtnClicked()">Publication</button>

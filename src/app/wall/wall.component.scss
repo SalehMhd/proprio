@@ -1,5 +1,6 @@
 .header {
     width: 100%;
+    display: inline-block;
 }
 
 .header img {
@@ -9,6 +10,7 @@
 table {
     width: 100%;
     padding: 10px 5px 0px 30px;
+    display: inline-block;
 }
 
 table img {
@@ -48,13 +50,16 @@ table img {
 }
 
 .footer {
+    position: relative;
+    bottom: 0;
+    right: 0;
     float: right;
-    margin-right: 100px;
+    margin-top: 50px;
+    margin-right: 80px;
     text-align: left;
     font-family: Source Sans Pro;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
     color: rgba(255,255,255,1);
-    background-color: rgba(67,66,93,1);
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { AddPublicationDialogComponent } from '../add-publication-dialog/add-publication-dialog.component';
+import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-wall',
@@ -9,9 +11,14 @@ import { AddPublicationDialogComponent } from '../add-publication-dialog/add-pub
 })
 export class WallComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  public publications: any[];
+
+  constructor(private dialog: MatDialog, private db: AngularFirestore) { }
 
   ngOnInit() {
+    const users = this.db.collection('/publications').valueChanges().subscribe(pubs => {
+      this.publications = pubs;
+    });
   }
 
   addPublicationBtnClicked() {
