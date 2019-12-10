@@ -33,8 +33,7 @@ export class AddPublicationDialogComponent implements OnInit {
       'TextContent': this.publicationTextContent
     }).then( res => {
       console.log(res);
-    }
-    );
+    });
     this.dialogRef.close(true);
   }
 
